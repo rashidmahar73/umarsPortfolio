@@ -2,6 +2,7 @@
 
 import { CollapseIcon } from "@/app/icons";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = () => {
@@ -11,15 +12,15 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   }
   return (
-    <div className="w-full lg:h-[65px] fixed top-0 shadow-lg shadow-[#130f40]/50 bg-[#03001417] backdrop-blur-md z-50 px-5 md:px-10">
-      <div className="flex items-center justify-between h-[100px] lg:hidden">
+    <div className="w-full lg:h-[65px] fixed top-0 shadow-lg shadow-[#2f5f23]/50  bg-[#03001417] backdrop-blur-md z-50 px-5 md:px-10">
+      <div className="flex items-center justify-between h-[50px] lg:h-[100px] lg:hidden">
         <a href="#home" className="h-auto w-auto flex flex-row items-center">
           <Image
-            src="/assets/images/1.png"
+            src="/assets/images/logo.png"
             alt="logo"
             width={180}
             height={10}
-            className="cursor-pointer hover:animate-slowspin h-full"
+            className="cursor-pointer hover:animate-slowspin mt-[-15px]"
           />
         </a>
         <button
@@ -35,23 +36,25 @@ const Navbar = () => {
           className="h-auto w-auto xs:hidden sm:hidden md:hidden lg:flex flex-row items-center"
         >
           <Image
-            src="/assets/images/1.png"
+            src="/assets/images/logo.png"
             alt="logo"
             width={180}
             height={10}
-            className="cursor-pointer hover:animate-slowspin h-full"
+            className="cursor-pointer hover:animate-slowspin mt-[-15px]"
           />
         </a>
         <div
-          className={`${isOpen
+          className={`${
+            isOpen
               ? "xs:flex xs:flex-col sm:flex sm:flex-col md:flex md:flex-col"
               : "hidden"
-            } lg:flex xl:flex xxl:flex`}
+          } lg:flex xl:flex xxl:flex`}
         >
           <div className="w-full md:w-[600px] h-full flex flex-row items-center justify-between">
             <div
-              className={`${isOpen ? "flex-col" : "flex-row"
-                } flex xs:items-start sm:items-start md:items-start lg:items-center justify-between w-full h-auto xs:border-[0px] xs:rounded-sm sm:rounded-sm md:rounded-sm lg:rounded-full sm:border-[0px] md:border-[0px] lg:border-[1px] border-[#A2DE3F] bg-[#0300145e]  mr-2 md:mr-[15] ml-2 md:ml-[20px] px-2 md:px-[20px] py-1 md:py-[10px] text-sm md:text-base text-gray-200`}
+              className={`${
+                isOpen ? "flex-col" : "flex-row"
+              } flex xs:items-start sm:items-start md:items-start lg:items-center justify-between w-full h-auto xs:border-[0px] xs:rounded-sm sm:rounded-sm md:rounded-sm lg:rounded-full sm:border-[0px] md:border-[0px] lg:border-[1px] border-[#A2DE3F] bg-[#0300145e]  mr-2 md:mr-[15] ml-2 md:ml-[20px] px-2 md:px-[20px] py-1 md:py-[10px] text-sm md:text-base text-gray-200`}
             >
               <a
                 href="#home"
@@ -60,20 +63,13 @@ const Navbar = () => {
               >
                 Home
               </a>
-              <a
-                href="#about"
+              {/* <a
+                href="#abou"
                 className="cursor-pointer my-2 sm:my-2 md:my-2 lg:my-0"
                 onClick={() => setIsOpen(false)}
               >
                 About
-              </a>
-              <a
-                href="#experience"
-                className="cursor-pointer my-2 sm:my-2 md:my-2 lg:my-0"
-                onClick={() => setIsOpen(false)}
-              >
-                Experience
-              </a>
+              </a> */}
               <a
                 href="#services"
                 className="cursor-pointer my-2 sm:my-2 md:my-2 lg:my-0"
@@ -94,6 +90,13 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Packages
+              </a>
+              <a
+                href="#teams"
+                className="cursor-pointer my-2 sm:my-2 md:my-2 lg:my-0"
+                onClick={() => setIsOpen(false)}
+              >
+                Teams
               </a>
             </div>
           </div>

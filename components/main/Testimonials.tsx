@@ -3,6 +3,7 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Slider } from "../slider";
 import { useSlideControls } from "../useSlideControls";
+import Image from "next/image";
 
 const testimonialsItems = [
   {
@@ -47,7 +48,7 @@ const Testimonials = () => {
   const { currentIndex, setCurrentIndex } = useSlideControls(slideCount);
   return (
     <section id="testimonials" className="my-20">
-      <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-20">
+      <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-20">
         Testimonials
       </h1>
       <Slider
@@ -56,6 +57,7 @@ const Testimonials = () => {
         slideCount={testimonialsItems?.length}
       >
         <Slider.Content>
+          <div className="relative mt-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 px-4">
             {testimonialsItems
               ?.slice(currentIndex.start, currentIndex.end)
@@ -63,9 +65,18 @@ const Testimonials = () => {
                 return (
                   <div
                     key={index}
-                    className={`shadow-lg shadow-[#2f5f23] hover:scale-110 transform transition-all duration-1000 ease-in-out bg-gray-100/20 backdrop-blur-sm text-black p-8 rounded-lg shadow-lg text-center`}
+                    className={`shadow-lg shadow-[#2f5f23]/50 hover:scale-110 transform transition-all duration-1000 ease-in-out bg-gray-100/20 backdrop-blur-sm text-black p-8 rounded-lg shadow-lg text-center`}
                   >
-                    <div className="mt-6 text-center">
+                    <div className="flex absolute mt-0 top-[-15px] left-0 w-full justify-center">
+                      <Image
+                        src="/assets/images/testimonial1.jpeg"
+                        alt="logo"
+                        width={180}
+                        height={10}
+                        className="cursor-pointer w-[70px] h-[70px] hover:animate-slowspin mt-[-15px] rounded-full"
+                      />
+                    </div>
+                    <div className="mt-7 text-center">
                       <p className="text-lg font-medium text-white">
                         {testimonial.name}
                       </p>
@@ -79,6 +90,8 @@ const Testimonials = () => {
                   </div>
                 );
               })}
+          </div>
+
           </div>
         </Slider.Content>
       </Slider>

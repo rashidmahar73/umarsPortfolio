@@ -7,13 +7,13 @@ function About() {
   return (
     <section
       id="about"
-      className="flex flex-col items-center justify-center py-5 md:py-10 lg:py-20"
+      className="flex flex-col items-center mt-[200px] lg:mt-[0px] justify-center py-5 md:py-10 lg:py-20"
     >
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10"
+        className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-[#91c933] bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10"
       >
         About Us
       </motion.h1>

@@ -12,10 +12,10 @@ const Encryption = () => {
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
           variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
+          className="text-[40px] font-medium text-center text-[#91c933]"
         >
           Performance
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+          <span className="text-[#91c933] bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
             {" "}
             &{" "}
           </span>

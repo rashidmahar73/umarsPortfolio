@@ -44,7 +44,7 @@ function Packages() {
       id="packages"
       className="flex flex-col items-center justify-center py-5 md:py-10 lg:py-20"
     >
-      <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10">
+      <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10">
         Packages
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
@@ -62,7 +62,7 @@ const Card = ({ pkg }: any) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-[#131316] backdrop-blur-sm p-6 rounded-lg shadow-inner shadow-[inset 0 10px 20px rgba(255,255,255,0.5)] transition-shadow duration-300  flex flex-col justify-between"
+      className="bg-[#131316] backdrop-blur-sm p-6 rounded-lg shadow-lg shadow-[#2f5f23]/50 hover:scale-110 transform transition-all duration-1000 ease-in-out  flex flex-col justify-between"
     >
       <div>
         <h3 className="text-xl font-bold mb-10 text-white">
@@ -109,7 +109,7 @@ const Card = ({ pkg }: any) => {
             {pkg?.freeTrials ? "Free Trial" : "No Free Trial"}
           </div>
         </div>
-        <button className="w-full bg-gray-300/30 backdrop-blur-sm text-white font-bold py-2 rounded-lg hover:bg-gray-200/30 transition-colors duration-300">
+        <button className="w-full bg-gray-300/30 backdrop-blur-sm text-white font-bold py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300">
           Buy Now
         </button>
       </div>
