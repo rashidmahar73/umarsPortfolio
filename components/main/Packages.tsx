@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-// Example array of objects
+
 const packages = [
   {
     serviceNo: "01",
@@ -62,35 +62,54 @@ const Card = ({ pkg }: any) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 h-80 flex flex-col justify-between"
-      style={{
-        background: "linear-gradient(135deg, #FFFFFF, #A2DE3F, #FFFFFF)",
-      }}
+      className="bg-[#131316] backdrop-blur-sm p-6 rounded-lg shadow-inner shadow-[inset 0 10px 20px rgba(255,255,255,0.5)] transition-shadow duration-300  flex flex-col justify-between"
     >
       <div>
-        <h3 className="text-2xl font-bold mb-4 text-gray-800">
+        <h3 className="text-xl font-bold mb-10 text-white">
           {pkg?.serviceName}
         </h3>
-        <ul className="list-disc list-inside text-gray-600 mb-4">
-          {pkg?.features.map((feature: any, index: number) => (
-            <li key={index} className="mb-2">
-              {feature}
-            </li>
-          ))}
-        </ul>
+        <div className="text-[30px] font-bold text-white mb-5">{pkg?.price}</div>
+        <div className="flex items-center w-full h-[40px]">
+          <div className="flex-grow h-px bg-white"></div>
+          <span className="px-4 text-white">Features</span>
+          <div className="flex-grow h-px bg-white"></div>
+        </div>{" "}
+        <div className="my-5">
+
+        {pkg?.features.map((feature: any, index: number) => (
+          <div className="flex items-center my-10">
+            <div className="border-[1px] rounded-full w-[25px] h-[25px] flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="white"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 13l4 4L19 7"
+                />
+            </svg>
+                </div>
+            <span className="ml-3 text-white">{feature}</span>
+          </div>
+        ))}
+        </div>
       </div>
       <div>
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between my-10">
           <div
             className={`text-sm font-semibold ${
-              pkg?.freeTrials ? "text-green-500" : "text-red-500 line-through"
+              pkg?.freeTrials ? "text-white" : "text-red-500 line-through"
             }`}
           >
             {pkg?.freeTrials ? "Free Trial" : "No Free Trial"}
           </div>
-          <div className="text-xl font-bold text-green-500">{pkg?.price}</div>
         </div>
-        <button className="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300">
+        <button className="w-full bg-gray-300/30 backdrop-blur-sm text-white font-bold py-2 rounded-lg hover:bg-gray-200/30 transition-colors duration-300">
           Buy Now
         </button>
       </div>
