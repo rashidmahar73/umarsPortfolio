@@ -49,7 +49,7 @@ function Packages() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
         {packages.map((pkg, index) => (
-          <Card key={`pkg.serviceNo-${index}`} pkg={pkg} />
+          <Card key={`pkg.serviceN-${index}`} pkg={pkg} />
         ))}
       </div>
     </section>
@@ -77,7 +77,7 @@ const Card = ({ pkg }: any) => {
         <div className="my-5">
 
         {pkg?.features.map((feature: any, index: number) => (
-          <div className="flex items-center my-10">
+          <div className="flex items-center my-10" key={`features-${index}`}>
             <div className="border-[1px] rounded-full w-[25px] h-[25px] flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
