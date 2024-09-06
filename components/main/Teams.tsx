@@ -11,8 +11,8 @@ function Teams() {
         Teams
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-y-4 mx-20 mb-20">
-        {teamsItems?.map((elem) => (
-          <div className="border-[1px] border-white rounded-md bg-[#131316] backdrop-blur-sm w-[90%]">
+        {teamsItems?.map((elem, index) => (
+          <div className="border-[1px] border-white rounded-md bg-[#131316] backdrop-blur-sm w-[90%]" key={`teams-${index}`}>
             <div className="flex justify-center my-2">
               <Image
                 src="/assets/images/testimonial1.jpeg"
