@@ -108,7 +108,7 @@ function Packages() {
       </h1>
       <CardSlider cards={cards} setCards={setCards} setTransitioning={setTransitioning}>
         <CardSlider.Content>
-          <div className="flex lg:w-[833px] md:w-[633px] sm:w-[445px] xs:w-[342px] h-[70dvh] mx-auto overflow-hidden relative">
+          <div className="flex lg:w-[833px] md:w-[633px] sm:w-[445px] xs:w-[342px] h-[80dvh] mx-auto overflow-hidden relative">
             {cards?.map((pkg, index) => (
               <Card
                 key={`pkg.serviceN-${index}`}
