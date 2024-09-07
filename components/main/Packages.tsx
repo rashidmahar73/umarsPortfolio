@@ -124,7 +124,7 @@ function Packages() {
         <CardSlider.Content>
           <div
             className={`flex lg:w-[833px] md:w-[633px] sm:w-[445px] xs:w-[342px] ${
-              availWidth <= 476 ? "h-[100dvh]" : "h-[70dvh]"
+              availWidth <= 476 ? "h-[640px]" : "h-[70dvh]"
             }  mx-auto overflow-hidden relative`}
           >
             {cards?.map((pkg, index) => (
