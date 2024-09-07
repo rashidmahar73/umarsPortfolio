@@ -12,7 +12,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   }
   return (
-    <div className="w-full lg:h-[65px] fixed top-0 shadow-lg shadow-[#2f5f23]/50  bg-[#03001417] backdrop-blur-md z-50 px-5 md:px-10">
+    <div className="w-full lg:h-[65px] fixed z-[4000] top-0 shadow-lg shadow-[#2f5f23]/50  bg-[#03001417] backdrop-blur-md z-50 px-5 md:px-10">
       <div className="flex items-center justify-between h-[50px] lg:h-[100px] lg:hidden">
         <a href="#home" className="h-auto w-auto flex flex-row items-center">
           <Image

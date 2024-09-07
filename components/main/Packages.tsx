@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CardSlider } from "../cardEffect";
 import { Slider } from "../slider";
@@ -98,6 +98,15 @@ function Packages() {
     lgCount: 3,
   };
 
+  const [availWidth, setAvailWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const { availWidth } = window.screen || {};
+      setAvailWidth(availWidth);
+    }
+  }, []);
+
   return (
     <section
       id="packages"
@@ -106,9 +115,18 @@ function Packages() {
       <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10">
         Packages
       </h1>
-      <CardSlider cards={cards} setCards={setCards} setTransitioning={setTransitioning}>
+      <CardSlider
+        cards={cards}
+        setCards={setCards}
+        setTransitioning={setTransitioning}
+        availWidth={availWidth}
+      >
         <CardSlider.Content>
-          <div className="flex lg:w-[833px] md:w-[633px] sm:w-[445px] xs:w-[342px] h-[80dvh] mx-auto overflow-hidden relative">
+          <div
+            className={`flex lg:w-[833px] md:w-[633px] sm:w-[445px] xs:w-[342px] ${
+              availWidth <= 476 ? "h-[100dvh]" : "h-[70dvh]"
+            }  mx-auto overflow-hidden relative`}
+          >
             {cards?.map((pkg, index) => (
               <Card
                 key={`pkg.serviceN-${index}`}
@@ -142,7 +160,9 @@ const Card = ({ pkg, className, contentClass, styling }: any) => {
         <h3 className={`text-md font-bold mb-10 text-white ${contentClass}`}>
           {pkg?.serviceName}
         </h3>
-        <div className={`text-[30px] font-bold text-white mb-5 ${contentClass}`}>
+        <div
+          className={`text-[30px] font-bold text-white mb-5 ${contentClass}`}
+        >
           {pkg?.price}
         </div>
         <div className="flex items-center w-full h-[40px]">
@@ -153,7 +173,9 @@ const Card = ({ pkg, className, contentClass, styling }: any) => {
         <div className="my-5">
           {pkg?.features.map((feature: any, index: number) => (
             <div className="flex items-center my-10" key={`features-${index}`}>
-              <div className={`${contentClass} border-[1px] rounded-full w-[25px] h-[25px] flex items-center justify-center`}>
+              <div
+                className={`${contentClass} border-[1px] rounded-full w-[25px] h-[25px] flex items-center justify-center`}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -169,7 +191,9 @@ const Card = ({ pkg, className, contentClass, styling }: any) => {
                   />
                 </svg>
               </div>
-              <span className={`ml-3 text-white ${contentClass}`}>{feature}</span>
+              <span className={`ml-3 text-white ${contentClass}`}>
+                {feature}
+              </span>
             </div>
           ))}
         </div>
@@ -184,7 +208,9 @@ const Card = ({ pkg, className, contentClass, styling }: any) => {
             {pkg?.freeTrials ? "Free Trial" : "No Free Trial"}
           </div>
         </div>
-        <button className={`${contentClass} w-full bg-gray-300/30 backdrop-blur-sm text-white font-bold py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300`}>
+        <button
+          className={`${contentClass} w-full bg-gray-300/30 backdrop-blur-sm text-white font-bold py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300`}
+        >
           Buy Now
         </button>
       </div>

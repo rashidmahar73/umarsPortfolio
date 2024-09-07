@@ -5,7 +5,7 @@ type ContentT = {
   children: React.ReactNode;
 };
 
-function CardSlider({ children, cards, setCards }: any) {
+function CardSlider({ children, cards, setCards, availWidth }: any) {
   function showNextSlide() {
     const updatedCards = [...cards];
     const firstCard = updatedCards.shift();
@@ -20,14 +20,7 @@ function CardSlider({ children, cards, setCards }: any) {
     setCards(updatedCards);
   }
 
-  const [availWidth, setAvailWidth] = useState(0);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const { availWidth } = window.screen || {};
-      setAvailWidth(availWidth);
-    }
-  }, []);
+  
 
 
   return (
