@@ -97,7 +97,6 @@ function Packages() {
     mdCount: 2,
     lgCount: 3,
   };
-  const { currentIndex, setCurrentIndex } = useSlideControls(slideCount);
 
   return (
     <section
@@ -107,27 +106,6 @@ function Packages() {
       <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl font-semibold bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10">
         Packages
       </h1>
-      {/* {availWidth<=1360 && (
-
-<Slider    currentIndex={currentIndex}
-        setCurrentIndex={setCurrentIndex}
-        slideCount={packages?.length}>
-  <Slider.Content>
-  <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 px-4">
-      {packages ?.slice(currentIndex.start, currentIndex.end)
-              ?.map((pkg, index) => (
-        <MDSMCard
-          key={`pkg.serviceN-${index}`}
-          pkg={pkg}
-        
-        />
-      ))}
-    </div>
-  </Slider.Content>
-</Slider>
-)} */}
-{/* {availWidth>=1360 && ( */}
-
       <CardSlider cards={cards} setCards={setCards} setTransitioning={setTransitioning}>
         <CardSlider.Content>
           <div className="flex lg:w-[833px] md:w-[633px] sm:w-[445px] xs:w-[342px] h-[70dvh] mx-auto overflow-hidden relative">
@@ -147,7 +125,6 @@ function Packages() {
           </div>
         </CardSlider.Content>
       </CardSlider>
-{/* )} */}
     </section>
   );
 }
@@ -208,68 +185,6 @@ const Card = ({ pkg, className, contentClass, styling }: any) => {
           </div>
         </div>
         <button className={`${contentClass} w-full bg-gray-300/30 backdrop-blur-sm text-white font-bold py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300`}>
-          Buy Now
-        </button>
-      </div>
-    </motion.div>
-  );
-};
-
-
-
-const MDSMCard = ({ pkg }: any) => {
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="bg-[#131316] backdrop-blur-sm p-6 rounded-lg shadow-lg shadow-[#2f5f23]/50 hover:scale-110 transform transition-all duration-1000 ease-in-out  flex flex-col justify-between"
-    >
-      <div>
-        <h3 className="text-xl font-bold mb-10 text-white">
-          {pkg?.serviceName}
-        </h3>
-        <div className="text-[30px] font-bold text-white mb-5">{pkg?.price}</div>
-        <div className="flex items-center w-full h-[40px]">
-          <div className="flex-grow h-px bg-white"></div>
-          <span className="px-4 text-white">Features</span>
-          <div className="flex-grow h-px bg-white"></div>
-        </div>{" "}
-        <div className="my-5">
-
-        {pkg?.features.map((feature: any, index: number) => (
-          <div className="flex items-center my-10" key={`features-${index}`}>
-            <div className="border-[1px] rounded-full w-[25px] h-[25px] flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="white"
-              className="w-5 h-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M5 13l4 4L19 7"
-                />
-            </svg>
-                </div>
-            <span className="ml-3 text-white">{feature}</span>
-          </div>
-        ))}
-        </div>
-      </div>
-      <div>
-        <div className="flex items-center justify-between my-10">
-          <div
-            className={`text-sm font-semibold ${
-              pkg?.freeTrials ? "text-white" : "text-red-500 line-through"
-            }`}
-          >
-            {pkg?.freeTrials ? "Free Trial" : "No Free Trial"}
-          </div>
-        </div>
-        <button className="w-full bg-gray-300/30 backdrop-blur-sm text-white font-bold py-2 rounded-lg hover:bg-white hover:text-black transition-colors duration-300">
           Buy Now
         </button>
       </div>
