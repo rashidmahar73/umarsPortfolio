@@ -133,7 +133,7 @@ function Packages() {
                 pkg={pkg}
                 className={`transition-opacity duration-500 ${
                   index === 2
-                    ? " opacity-100 backdrop-blur-sm bg-[#131316]  shadow-lg shadow-[#2f5f23]/50 hover:scale-110 transform transition-all duration-1000 ease-in-out"
+                    ? "h-[68dvh] opacity-100 backdrop-blur-sm bg-[#131316]  shadow-lg shadow-[#2f5f23]/50 hover:scale-110 transform transition-all duration-1000 ease-in-out"
                     : ""
                 } ${leftMargin(index)}`}
                 contentClass={contentOpacity(index)}
@@ -153,7 +153,7 @@ const Card = ({ pkg, className, contentClass, styling }: any) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={`absolute  w-[300px] p-6 ${className} rounded-lg`}
+      className={`absolute w-[300px] p-6 ${className} rounded-lg`}
       style={styling}
     >
       <div>
