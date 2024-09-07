@@ -133,7 +133,7 @@ function Packages() {
                 pkg={pkg}
                 className={`transition-opacity duration-500 ${
                   index === 2
-                    ? "h-[68dvh] opacity-100 backdrop-blur-sm bg-[#131316]  shadow-lg shadow-[#2f5f23]/50 hover:scale-110 transform transition-all duration-1000 ease-in-out"
+                    ? " opacity-100 backdrop-blur-sm bg-[#131316]  shadow-lg shadow-[#2f5f23]/50 hover:scale-110 transform transition-all duration-1000 ease-in-out"
                     : ""
                 } ${leftMargin(index)}`}
                 contentClass={contentOpacity(index)}
