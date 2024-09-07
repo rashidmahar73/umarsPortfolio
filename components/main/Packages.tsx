@@ -92,7 +92,6 @@ function Packages() {
     return "opacity-40";
   }
 
-  const { availWidth } = window?.screen || {};
   const slideCount = {
     smCount: 1,
     mdCount: 2,
