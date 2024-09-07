@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      blur: {
+        '5': '10px',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

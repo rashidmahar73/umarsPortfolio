@@ -7,7 +7,7 @@ function Teams() {
   const teamsItems = [{}, {}, {}, {}];
   return (
     <section id="teams">
-      <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-20">
+      <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl text-center font-semibold bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-20">
         Teams
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-y-4 mx-20 mb-20">

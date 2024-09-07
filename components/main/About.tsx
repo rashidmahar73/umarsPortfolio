@@ -22,8 +22,9 @@ function About() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          className="flex justify-center items-center"
         >
-          <h2 className="text-white">
+          <h2 className="text-white border border-[#A2DE3F] bg-gray-100/20 backdrop-blur-sm rounded-md p-5">
             At Aptitude, we understand the pivotal role a strong online presence
             plays in today’s competitive business landscape. With years of
             expertise in LinkedIn and social media marketing, we have empowered

@@ -45,7 +45,7 @@ const Services = () => {
         id="services"
         className="flex flex-col items-center justify-center py-5 md:py-10 lg:py-20"
       >
-      <h1 className="text-2xl text-[#91c933] md:text-4xl lg:text-5xl xl:text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10">
+      <h1 className="text-2xl text-[#91c933] md:text-4xl lg:text-5xl xl:text-5xl font-semibold bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-10">
         Our Services
       </h1>
       <div className="grid lg:grid-cols-3 xs:grid-cols-1 sm:grid-cols-1  mx-20 gap-20">

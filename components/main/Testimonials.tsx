@@ -48,7 +48,7 @@ const Testimonials = () => {
   const { currentIndex, setCurrentIndex } = useSlideControls(slideCount);
   return (
     <section id="testimonials" className="my-20">
-      <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl text-center font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-20">
+      <h1 className="text-[#91c933] text-2xl md:text-4xl lg:text-5xl xl:text-5xl text-center font-semibold bg-clip-text bg-gradient-to-r from-green-400 to-green-600 py-5 md:py-20">
         Testimonials
       </h1>
       <Slider
