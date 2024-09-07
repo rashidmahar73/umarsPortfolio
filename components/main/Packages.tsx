@@ -72,7 +72,7 @@ function Packages() {
       return "lg:left-[30px] md:left-[30px] z-[1000] bg-[#000000] sm:blur-3xl xs:blur-3xl md:blur-none lg:blur-none";
     }
     if (index === 2) {
-      return "lg:left-[260px] sm:left-[80px] md:left-[160px] xs:left-[20px] z-[2000] h-full";
+      return "lg:left-[260px] sm:left-[80px] md:left-[160px] xs:left-[20px] z-[2000] h-auto";
     }
     if (index === 3) {
       return "lg:right-[30px] md:right-[30px] sm:right-[0px] sm:blur-3xl xs:blur-3xl z-[1000] bg-[#000000] md:blur-none lg:blur-none";
